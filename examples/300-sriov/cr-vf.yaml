@@ -1,0 +1,9 @@
+apiVersion: "sriov.redhat.com/v1"
+kind: VirtualFunction
+metadata:
+  name: vf 
+spec:
+  pci: "03:00.0"
+  numvfs: 2 
+
+

@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shell-operator
+spec:
+  containers:
+  - name: shell-operator
+    image: 192.168.222.1:5000/shell-operator:sriov-vf 
+    imagePullPolicy: Always
+  serviceAccountName: sriov-vf-acc
