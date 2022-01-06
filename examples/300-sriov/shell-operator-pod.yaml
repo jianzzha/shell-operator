@@ -8,4 +8,14 @@ spec:
   - name: shell-operator
     image: 192.168.222.1:5000/shell-operator:sriov-vf 
     imagePullPolicy: Always
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - mountPath: /sys
+      name: sys
+  nodeName: worker1
   serviceAccountName: sriov-vf-acc
+  volumes:
+  - name: sys
+    hostPath:
+      path: /sys
